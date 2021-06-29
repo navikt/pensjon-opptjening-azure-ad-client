@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
+    implementation("com.microsoft.azure:msal4j:1.8.0")
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
 }
 
