@@ -1,0 +1,11 @@
+
+.DS_Store
+.eslintcache
+*.iml
+
+.idea
+.gradle
+build
+out
+gradle.properties.kts
+createSecrets.sh
