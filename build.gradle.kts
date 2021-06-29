@@ -1,9 +1,12 @@
+group = "no.nav.pensjonopptjening"
+version = "1.0.0"
+
 plugins {
     kotlin("jvm") version "1.5.20"
-}
+    `java-library`
+    `maven-publish`
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+}
 
 repositories {
     mavenCentral()
@@ -21,5 +24,37 @@ tasks.withType<Test> {
     testLogging {
         events("passed", "skipped", "failed")
         exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_16
+    targetCompatibility = JavaVersion.VERSION_16
+}
+
+tasks {
+    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions.jvmTarget = "16"
+    }
+    test {
+        useJUnitPlatform()
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/navikt/${rootProject.name}")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+        }
     }
 }
