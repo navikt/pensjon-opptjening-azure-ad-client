@@ -14,8 +14,7 @@ class AzureAdTokenProvider(config: AzureAdConfig) : TokenProvider {
 
     override fun getToken() = refreshToken(this.cachedToken)!!.accessToken
 
-    private fun refreshToken(azureAdToken: AzureToken?) =
-        if (expiredOrNull(azureAdToken)) fetchAzureAdToken() else azureAdToken
+    private fun refreshToken(azureAdToken: AzureToken?) = if (expiredOrNull(azureAdToken)) fetchAzureAdToken() else azureAdToken
 
     private fun expiredOrNull(azureAdToken: AzureToken?) = (azureAdToken == null || azureAdToken expiresWithinMinutes 2)
 
@@ -30,6 +29,6 @@ class AzureAdTokenProvider(config: AzureAdConfig) : TokenProvider {
     }
 }
 
-internal data class AzureToken(val accessToken: String, val expires: LocalDateTime){
+internal data class AzureToken(val accessToken: String, val expires: LocalDateTime) {
     internal infix fun expiresWithinMinutes(minutes: Long) = LocalDateTime.now() >= expires.minusMinutes(minutes)
 }
