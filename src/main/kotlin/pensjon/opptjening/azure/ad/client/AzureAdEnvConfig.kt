@@ -3,7 +3,7 @@ package pensjon.opptjening.azure.ad.client
 import com.microsoft.aad.msal4j.ClientCredentialFactory
 import com.microsoft.aad.msal4j.ConfidentialClientApplication
 
-class AzureAdEnvConfig(environment: Map<String, String>) {
+class AzureAdEnvConfig(environment: Map<String, String>) : AzureAdConfig() {
     private val scopes: Set<String>
     private val confidentialClientApplication: ConfidentialClientApplication
 
@@ -13,8 +13,8 @@ class AzureAdEnvConfig(environment: Map<String, String>) {
         confidentialClientApplication = createConfidentialClientApplication(environment)
     }
 
-    internal fun getScopes() = scopes
-    internal fun getConfidentialClientApplication() = confidentialClientApplication
+    override fun getScopes(): Set<String> = scopes
+    override fun getConfidentialClientApplication(): ConfidentialClientApplication = confidentialClientApplication
 
     private fun createConfidentialClientApplication(environment: Map<String, String>): ConfidentialClientApplication {
         val clientId = environment[CLIENT_ID]!!

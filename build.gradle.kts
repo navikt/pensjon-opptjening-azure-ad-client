@@ -5,7 +5,6 @@ plugins {
     kotlin("jvm") version "1.5.20"
     `java-library`
     `maven-publish`
-
 }
 
 repositories {

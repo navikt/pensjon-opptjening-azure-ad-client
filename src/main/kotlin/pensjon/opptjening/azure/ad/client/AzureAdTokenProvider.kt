@@ -7,7 +7,7 @@ import java.time.ZoneId
 
 private val LOG = LoggerFactory.getLogger(AzureAdTokenProvider::class.java)
 
-class AzureAdTokenProvider(config: AzureAdEnvConfig) : TokenProvider {
+class AzureAdTokenProvider(config: AzureAdConfig) : TokenProvider {
     private val scopes: Set<String> = config.getScopes()
     private val confidentialClientApplication = config.getConfidentialClientApplication()
     private var cachedToken: AzureToken? = null
