@@ -10,7 +10,6 @@ AzureAdTokenProvider require a AzureAdConfig to properly communicate with the te
 AzureAdEnvConfig retrieves the necessary information from the environment. 
 Use azure and accessPolicy in the yaml file to mount the environment variables needed (https://doc.nais.io/security/auth/azure-ad/).
 
-
 # Future work 
 1) Make a springboot compatible version of AzureAdConfig.
 2) Handle more than one scope.
