@@ -1,5 +1,4 @@
 group = "no.nav.pensjonopptjening"
-version = "1.0.0"
 
 plugins {
     kotlin("jvm") version "1.5.20"
