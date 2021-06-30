@@ -5,6 +5,7 @@ plugins {
     kotlin("jvm") version "1.5.20"
     `java-library`
     `maven-publish`
+    id("net.researchgate.release") version "2.8.1"
 }
 
 repositories {
@@ -38,6 +39,11 @@ tasks {
     test {
         useJUnitPlatform()
     }
+}
+
+release {
+    newVersionCommitMessage = "[Release Plugin] - next version commit: "
+    tagTemplate = "release-\${version}"
 }
 
 publishing {
