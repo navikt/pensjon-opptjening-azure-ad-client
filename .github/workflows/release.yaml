@@ -1,9 +1,7 @@
 name: Release pensjon-opptjening-azure-ad-client
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   release:
