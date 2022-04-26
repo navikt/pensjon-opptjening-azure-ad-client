@@ -1,7 +1,7 @@
 group = "no.nav.pensjonopptjening"
 
 plugins {
-    kotlin("jvm") version "1.5.20"
+    kotlin("jvm") version "1.6.21"
     `java-library`
     `maven-publish`
     id("net.researchgate.release") version "2.8.1"
@@ -14,7 +14,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
     implementation("com.microsoft.azure:msal4j:1.8.0")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
 }
 
 
@@ -33,7 +33,7 @@ java {
 
 tasks {
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "16"
+        kotlinOptions.jvmTarget = "17"
     }
     test {
         useJUnitPlatform()
