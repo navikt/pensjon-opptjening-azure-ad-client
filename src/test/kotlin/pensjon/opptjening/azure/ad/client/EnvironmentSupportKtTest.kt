@@ -10,7 +10,7 @@ internal class EnvironmentSupportKtTest {
     @Test
     fun `should throw MissingAzureAdEnvironmentVariables when env varibales are not found`() {
         val notFound = "NotFound"
-        val exception = assertThrows<MissingAzureAdEnvironmentVariables> {
+        val exception: MissingAzureAdEnvironmentVariables = assertThrows {
             mapOf("TestKey" to "TestValue").verifyEnvironmentVariables("TestKey", notFound)
         }
         assertTrue(exception.message!!.contains(notFound))
