@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.20")
     implementation("com.microsoft.azure:msal4j:1.11.3")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
 }
