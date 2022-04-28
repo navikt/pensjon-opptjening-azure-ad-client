@@ -38,5 +38,5 @@ class AzureAdVariableConfig(
         const val AZURE_APP_WELL_KNOWN_URL = "AZURE_APP_WELL_KNOWN_URL"
     }
 
-    private fun createProxy(proxyUrl: URL) = Proxy(Proxy.Type.HTTP, InetSocketAddress(proxyUrl.host, proxyUrl.port))
+    fun createProxy(proxyUrl: URL) = Proxy(Proxy.Type.HTTP, InetSocketAddress(proxyUrl.host, proxyUrl.port))
 }
