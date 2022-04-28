@@ -1,7 +1,7 @@
 group = "no.nav.pensjonopptjening"
 
 plugins {
-    kotlin("jvm") version "1.6.21"
+    kotlin("jvm") version "1.6.20"
     `java-library`
     `maven-publish`
     id("net.researchgate.release") version "2.8.1"
