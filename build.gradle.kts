@@ -1,7 +1,7 @@
 group = "no.nav.pensjonopptjening"
 
 plugins {
-    kotlin("jvm") version "1.6.20"
+    kotlin("jvm") version "1.6.10"
     `java-library`
     `maven-publish`
     id("net.researchgate.release") version "2.8.1"
@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.20")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.10")
     implementation("com.microsoft.azure:msal4j:1.11.3")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
 }
