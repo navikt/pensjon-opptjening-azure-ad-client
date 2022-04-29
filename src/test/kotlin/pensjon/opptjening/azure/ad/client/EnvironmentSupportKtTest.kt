@@ -4,6 +4,8 @@ package pensjon.opptjening.azure.ad.client
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
+import pensjon.opptjening.azure.ad.client.util.MissingAzureAdEnvironmentVariables
+import pensjon.opptjening.azure.ad.client.util.verifyEnvironmentVariables
 
 internal class EnvironmentSupportKtTest {
 
