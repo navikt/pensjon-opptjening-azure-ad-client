@@ -2,6 +2,7 @@ package pensjon.opptjening.azure.ad.client
 
 import com.microsoft.aad.msal4j.ClientCredentialParameters
 import org.slf4j.LoggerFactory
+import pensjon.opptjening.azure.ad.client.config.AzureAdConfig
 import java.time.LocalDateTime
 import java.time.ZoneId
 

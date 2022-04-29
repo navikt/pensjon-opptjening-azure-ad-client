@@ -1,7 +1,8 @@
-package pensjon.opptjening.azure.ad.client
+package pensjon.opptjening.azure.ad.client.config
 
 import com.microsoft.aad.msal4j.ClientCredentialFactory
 import com.microsoft.aad.msal4j.ConfidentialClientApplication
+import pensjon.opptjening.azure.ad.client.verifyEnvironmentVariables
 
 class AzureAdEnvConfig(environment: Map<String, String>) : AzureAdConfig() {
     private val scopes: Set<String>

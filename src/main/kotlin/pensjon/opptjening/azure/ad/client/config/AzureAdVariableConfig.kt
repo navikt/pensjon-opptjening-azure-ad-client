@@ -1,10 +1,10 @@
-package pensjon.opptjening.azure.ad.client
+package pensjon.opptjening.azure.ad.client.config
 
 import com.microsoft.aad.msal4j.ClientCredentialFactory
 import com.microsoft.aad.msal4j.ConfidentialClientApplication
-import pensjon.opptjening.azure.ad.client.AzureAdVariableConfig.EnvironmentKeys.AZURE_APP_CLIENT_ID
-import pensjon.opptjening.azure.ad.client.AzureAdVariableConfig.EnvironmentKeys.AZURE_APP_CLIENT_SECRET
-import pensjon.opptjening.azure.ad.client.AzureAdVariableConfig.EnvironmentKeys.AZURE_APP_WELL_KNOWN_URL
+import pensjon.opptjening.azure.ad.client.config.AzureAdVariableConfig.EnvironmentKeys.AZURE_APP_CLIENT_ID
+import pensjon.opptjening.azure.ad.client.config.AzureAdVariableConfig.EnvironmentKeys.AZURE_APP_CLIENT_SECRET
+import pensjon.opptjening.azure.ad.client.config.AzureAdVariableConfig.EnvironmentKeys.AZURE_APP_WELL_KNOWN_URL
 import java.net.InetSocketAddress
 import java.net.Proxy
 import java.net.URL
