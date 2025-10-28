@@ -5,6 +5,7 @@
 
 .idea
 .gradle
+.kotlin
 build
 out
 gradle.properties.kts
