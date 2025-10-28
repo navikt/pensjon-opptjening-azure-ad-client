@@ -21,8 +21,8 @@ jobs:
       - name: 'Capture version number for release'
         run: echo "VERSION=$(grep -v '^#' gradle.properties | grep 'version=' | cut -d '=' -f2 | xargs)" >> $GITHUB_ENV
 
-      - name 'ls'
-      - run: |
+      - name: 'ls'
+        run: |
           ls
 
       - name: 'Build and update version'
