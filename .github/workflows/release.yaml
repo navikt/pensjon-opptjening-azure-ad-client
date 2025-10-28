@@ -5,6 +5,10 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    environment: release
     steps:
       - name: 'Checkout code'
         uses: actions/checkout@v5
@@ -27,6 +31,9 @@ jobs:
 
       - name: 'Build and update version'
         run: ./gradlew build release -Prelease.useAutomaticVersion=true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: 'Checkout release-version'
         uses: actions/checkout@v5
