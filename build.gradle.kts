@@ -6,16 +6,18 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "no.nav.pensjonopptjening"
 
-val junitJupiterVersion = "5.10.3"
+val junitJupiterVersion = "6.1.3"
+val kotlinTestVersion = "2.4.20"
+val msal4jVersion = "1.26.1"
 
 plugins {
-    val kotlinVersion = "2.2.10"
+    val kotlinVersion = "2.4.21"
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.serialization") version kotlinVersion
     `java-library`
     `maven-publish`
-    id("net.researchgate.release") version "3.1.0"
-    id("com.github.ben-manes.versions") version "0.53.0"
+    id("net.researchgate.release") version "3.2.0"
+    id("io.github.ben-manes.versions") version "0.67.0"
 }
 
 repositories {
@@ -30,11 +32,13 @@ java {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("com.microsoft.azure:msal4j:1.23.1")
+    implementation("com.microsoft.azure:msal4j:$msal4jVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlinTestVersion")
 }
 
 tasks.withType<Test> {
